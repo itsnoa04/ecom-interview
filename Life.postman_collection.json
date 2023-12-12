@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "4addd964-84a8-40e2-ae25-f16633892fa9",
+		"name": "Life",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19887872"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"first_name\": \"Alec\",\n  \"last_name\": \"Reynolds\",\n  \"email\": \"user@example.com\",\n  \"password\": \"supersecret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/store/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"store",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"supersecret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/store/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"store",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/store/products?limit=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"store",
+						"products"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": null,
+							"description": "search for items",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": null,
+							"description": "Filter by ids.  string or array of strings",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": null,
+							"description": "Filter by title",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "1",
+							"description": "Default is 100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6ImN1c18wMUhIQzNFM1hWR0EwMzZDNVZYTktFODE0SCIsImRvbWFpbiI6InN0b3JlIiwiaWF0IjoxNzAyMjg3MzQ4LCJleHAiOjE3MDQ4NzkzNDh9.KP9YJMoFQOhBsfmuXJTLAhIkX8YFb-B_PW_aoHiRAeU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/store/carts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"store",
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6ImN1c18wMUhIQzNFM1hWR0EwMzZDNVZYTktFODE0SCIsImRvbWFpbiI6InN0b3JlIiwiaWF0IjoxNzAyMjg3MzQ4LCJleHAiOjE3MDQ4NzkzNDh9.KP9YJMoFQOhBsfmuXJTLAhIkX8YFb-B_PW_aoHiRAeU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
