@@ -148,6 +148,9 @@ export function NavigationMenuLinks() {
             image: product.thumbnail,
           };
         });
+
+        console.log(formattedProducts);
+
         setProducts(formattedProducts);
       })
       .catch((err) => {
